@@ -1,0 +1,326 @@
+/*© 2023 LeeKiJoon all rights reserved*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/aileron');
+
+body {
+    margin: 0;
+    height: 100%;
+    background-color: white;
+}
+
+.MainApp {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+}
+
+.TitleBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-app-region: drag;
+}
+
+.WindowTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: 1px;
+    font-family: aileron;
+    font-weight: bold;
+    font-size: 30px;
+    color: transparent;
+    background: linear-gradient(to right, #E752A2, #F8CD44, #B9F19F, #4ADDF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    user-select: none;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+.TitleBarButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75px;
+    height: 25px;
+    margin-left: auto;
+    margin-top: 10px;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+
+.TitleBarMaximizeButton {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+    background-image: url('../../assets/buttons/maximizeButton.svg');
+}
+
+.TitleBarRestoreButton {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+    background-image: url('../../assets/buttons/restoreButton.svg');
+}
+
+.TitleBarMinimizeButton {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+    background-image: url('../../assets/buttons/minimizeButton.svg');
+}
+
+.TitleBarCloseButton {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+    background-image: url('../../assets/buttons/closeButton.svg');
+}
+
+.TitleBarRestoreButton:hover,
+.TitleBarMaximizeButton:hover,
+.TitleBarMinimizeButton:hover {
+    background-color: grey;
+}
+
+.TitleBarCloseButton:hover {
+    background-color: red;
+}
+
+
+
+.ContentArea {
+    display: flex;
+    height: 100%;
+}
+
+.SideContent {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.ContentMenuList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.DefaultMenuButton {
+    display: flex;
+    flex: row;
+    text-align: left;
+    margin-top: 10%;
+    margin-left: 20%;
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: left;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.DefaultMenuButton:hover{
+    color: #6a7cce;
+}
+
+.ActivatedMenuButton {
+    display: flex;
+    flex: row;
+    text-align: left;
+    margin-top: 10%;
+    margin-left: 20%;
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 20px;
+    color: #6a7cce;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: left;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+.ContentMenuSvg {
+    height: 25px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+}
+
+
+
+.test {
+    fill: rgb(255, 255, 255);
+}
+
+.CopyrightLogo {
+    display: flex;
+    margin-left: 5px;
+    align-items: center;
+    font-family: Nunito;
+    font-weight: lighter;
+    font-size: 12.5px;
+    color: grey;
+    user-select: none;
+}
+
+.ProjectsTab {
+    display: flex;
+    flex-grow: 700;
+    flex-direction: column;
+}
+
+.ProjectsSubTab {
+    justify-content: flex-end;
+    display: flex;
+    flex-grow: 20;
+}
+
+#addProjectsButton {
+    background-color: #6a7cce;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    font-family: Nunito;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 15px;;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#addProjectsButton:hover {
+    background-color:cornflowerblue;
+    cursor: pointer;
+}
+
+#addProjectsButton:active {
+    background-color:darkslateblue;
+}
+
+:root {
+	--white: #FFF;
+	--blue: #562BF7;
+	--light: #F5F5F5;
+	--light-blue: #F3F0FF;
+	--grey: #eee;
+	--dark-grey: #666;
+	--black: #222;
+}
+
+.SettingContainer {
+	width: 90%;
+	background: var(--white);
+    font-family: Quicksand;
+}
+.SettingWrapper {
+	display: flex;
+}
+.SettingIndicator {
+	padding: 4rem 0;
+	border-right: 1px solid var(--grey);
+}
+.SettingIndicator li {
+    list-style: none;
+	display: flex;
+	align-items: center;
+	grid-gap: .5rem;
+	padding: 10px 2rem;
+	cursor: pointer;
+	font-size: 15px;
+	color: var(--black);
+	border-right: 3px solid transparent;
+}
+.SettingIndicator li i {
+	font-size: 1rem;
+}
+.SettingIndicator li:hover {
+	color: #6a7cce;
+}
+.SettingIndicator li.active {
+	border-right-color: var(--blue);
+	color: var(--blue);
+	background: var(--light-blue);
+}
+.SettingContent {
+    height: 60vh;
+	padding: 1.5rem 2rem;
+    overflow: auto;
+}
+.SettingContent li {
+    list-style: none;
+	display: none;
+}
+.SettingContent li.active {
+	display: block;
+}
+.SettingContent li h1 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--black);
+	margin-bottom: .75rem;
+}
+.SettingContent li p {
+	margin-bottom: .5rem;
+	color: var(--dark-grey);
+	font-size: .875rem;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+	.SettingWrapper {
+		flex-direction: column;
+	}
+	.SettingIndicator {
+		border-right: none;
+	}
+}

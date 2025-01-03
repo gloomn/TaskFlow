@@ -1,0 +1,15 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "Desktop application for teachers.",
+  "main": "electron/main.js",
+  "scripts": {
+    "test": "start",
+    "start": "electron ."
+  },
+  "author": "Lee Ki Joon",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.2.1"
+  }
+}
