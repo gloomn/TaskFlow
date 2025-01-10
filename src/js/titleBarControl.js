@@ -1,18 +1,22 @@
-//© 2023 LeeKiJoon all rights reserved
+//© 2025 LeeKiJoon all rights reserved
+//Close window button event listener
 closeWindowButton.addEventListener('click', () =>
 {
     window.api.closeWindow();
 });
 
+//Minimize window button event listener
 minimizeWindowButton.addEventListener('click', () => {
     window.api.minimizeWindow();
 });
 
+//Resize window button event listener
 resizeWindowButton.addEventListener('click', () =>
 {
     window.api.maximizeRestoreWindow();
 });
 
+//Change maximize/restore button with window status
 function changeMaximizeRestoreButton(windowMaximized)
 {
     if(windowMaximized)
@@ -34,6 +38,7 @@ function changeMaximizeRestoreButton(windowMaximized)
     
 };
 
+//Check maximize status => if maximize: restore button, if restored: maximize button
 window.api.checkMaximizeStatus((isMaximized) => {
     changeMaximizeRestoreButton(isMaximized);
 });

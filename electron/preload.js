@@ -1,4 +1,4 @@
-//© 2023 LeeKiJoon all rights reserved
+//© 2025 LeeKiJoon all rights reserved
 const { contextBridge, ipcRenderer } = require('electron');
 
 const WINDOW_API = {
@@ -21,6 +21,7 @@ const WINDOW_API = {
         {
             callback(false);
         });
+
         ipcRenderer.on('isRestored', () => 
         {
             callback(true);
@@ -31,6 +32,8 @@ const WINDOW_API = {
     {
         ipcRenderer.send('maximize-restore-window');
     },
+
+    //Log
     log: (args) => console.log(args),
 
 

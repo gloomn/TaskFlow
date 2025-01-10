@@ -1,4 +1,4 @@
-//© 2023 LeeKiJoon all rights reserved
+//© 2025 LeeKiJoon all rights reserved
 //Use strict mode
 'use strict';
 const 
@@ -103,7 +103,7 @@ function createSplashWindow()
     splashWindow.show();
     setTimeout(() => {
         createWindow();
-      }, 3000);
+      }, 4000);
 }
 
 
