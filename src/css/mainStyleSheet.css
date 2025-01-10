@@ -5,17 +5,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @font-face
 {
     font-family: 'RecipeKoreaFont';
     src: url('../../assets/fonts/RecipeKoreaFont.ttf') format('truetype');
 }
 
+:root 
+{
+    --background-color: #ffffff;
+    --button-color: #000000;
+    --button-selected-color: rgb(245,245,245);
+    --title-color: #424242;
+    --button-title-color: #555555;
+    --button-setting-color: #424242;
+}
+
+.dark-mode 
+{
+    --background-color: #181d27;
+    --button-color: #ffffff;
+    --button-selected-color: #252b37;
+    --title-color: #ffffff;
+    --button-title-color: gray;
+    --button-setting-color: #7c7474;
+}
+
+.dark-mode img 
+{
+    filter: invert(1);
+}
+
+.dark-mode .TitleBarMaximizeButton,
+.dark-mode .TitleBarRestoreButton,
+.dark-mode .TitleBarMinimizeButton,
+.dark-mode .TitleBarCloseButton {
+    filter: invert(1);
+}
+
 body 
 {
     margin: 0;
     height: 100%;
-    background-color: white;
+    background-color: var(--background-color);
+    transition: background 0.2s linear;
 }
 
 
@@ -38,17 +76,18 @@ body
 .WindowTitle 
 {
     display: flex;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
     flex-direction: row;
     align-items: center;
-    letter-spacing: 3px;
-    font-family: Tilt Neon;
+    letter-spacing: 1px;
+    font-family: Inter;
     text-rendering: optimizeLegibility;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 20px;
-    color: black;
+    color: var(--title-color);
     user-select: none;
+    transition: color 0.2s linear;
 }
 
 .WindowTitleImage
@@ -128,13 +167,9 @@ body
 
 .TitleBarRestoreButton:hover,
 .TitleBarMaximizeButton:hover,
-.TitleBarMinimizeButton:hover {
+.TitleBarMinimizeButton:hover,
+.TitleBarCloseButton:hover {
     background-color: grey;
-}
-
-.TitleBarCloseButton:hover 
-{
-    background-color: red;
 }
 
 
@@ -169,12 +204,12 @@ body
 
 .ContentMenuList button
 {
-    width: 120px;
+    width: 140px;
 }
 
 /*Default Menu Button */
 .DefaultMenuButton {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
     display: flex;
     flex-direction: row;
     margin-left: 10%;
@@ -194,7 +229,8 @@ body
     font-family: Manrope;
     font-weight: bold;
     font-size: 15px;
-    color: gray;
+    color: var(--button-color);
+    transition: color 0.2s linear;
 }
 
 .DefaultMenuButton:hover{
@@ -206,11 +242,12 @@ body
     margin: 0px 0px 0px 0px;
     height: 25px;
     width: 25px;
+    transition: filter 0.2s linear;
 }
 
 /*Activated Menu Button*/
 .ActivatedMenuButton {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
     display: flex;
     flex-direction: row;
     margin-left: 10%;
@@ -218,8 +255,9 @@ body
     margin-bottom: 5%;
     border: none;
     cursor: pointer;
-    background-color: transparent;
     align-items: center;
+    border-radius: 5px;
+    background-color: var(--button-selected-color);
 }
 
 .ActivatedMenuButton img
@@ -227,6 +265,7 @@ body
     margin: 0px 0px 0px 0px;
     height: 25px;
     width: 25px;
+    transition: filter 0.2s linear;
 }
 
 .ActivatedMenuButton p
@@ -237,7 +276,8 @@ body
     font-family: Manrope;
     font-weight: bold;
     font-size: 15px;
-    color: gray;
+    color: var(--button-color);
+    transition: color 0.2s linear;
 }
 
 .AdditionalMenuButtonContainer
@@ -269,7 +309,8 @@ body
     font-family: Manrope;
     font-weight: bold;
     font-size: 15px;
-    color: #424242;
+    color: var(--button-setting-color);
+    transition: color 0.2s linear;
 }
 
 .AdditionalMenuButton img
@@ -277,6 +318,7 @@ body
     margin: 0px 0px 0px 0px;
     height: 25px;
     width: 25px;
+    transition: filter 0.2s linear;
 }
 
 /*Button Title*/
@@ -286,7 +328,7 @@ body
     font-family: Manrope;
     font-weight: bold;
     font-size: 13px;
-    color: gray;
+    color: var(--button-title-color);
     border: none;
     background-color: transparent;
     
@@ -314,8 +356,108 @@ body
     color: grey;
     user-select: none;
 }
+  
+.themeToggleButton
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-
+.knob,
+.btn-bg 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+  
+.btn 
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+  
+.btn.btn-pill,
+.btn.btn-pill > .btn-bg 
+{
+    border-radius: 100px;
+}
+  
+.btn.btn-rect 
+{
+    border-radius: 2px;
+}
+  
+.checkbox 
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+  
+.knob 
+{
+    z-index: 2;
+}
+  
+.btn-bg
+{
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+  
+  /* Theme Button */
+#themeButton .knob:before 
+{
+    content: "Light";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+  
+#themeButton .checkbox:checked + .knob:before 
+{
+    content: "Dark";
+    left: 42px;
+    background-color: #424242;
+}
+  
+#themeButton .checkbox:checked ~ .btn-bg 
+{
+    background-color: #fcebeb;
+}
+  
+#themeButton .knob,
+#themeButton .knob:before,
+#themeButton .btn-bg 
+{
+    transition: 0.3s ease all;
+}
 
 
 @media screen and (max-width: 576px) {

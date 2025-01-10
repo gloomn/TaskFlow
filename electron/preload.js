@@ -36,6 +36,46 @@ const WINDOW_API = {
     //Log
     log: (args) => console.log(args),
 
+    transferToDashboardPage: () =>
+    {
+        ipcRenderer.send('transfer-to-dashboard')
+    },
+
+    transferToCalendarPage: () =>
+    {
+        ipcRenderer.send('transfer-to-calendar')
+    },
+
+    transferToDocumentsPage: () =>
+    {
+        ipcRenderer.send('transfer-to-documents')
+    },
+
+    transferToTimetablePage: () =>
+    {
+        ipcRenderer.send('transfer-to-timetable')
+    },
+
+    transferToTodolistPage: () =>
+    {
+        ipcRenderer.send('transfer-to-todolist')
+    },
+
+    transferToInformationPage: () =>
+    {
+        ipcRenderer.send('transfer-to-information')
+    },
+
+    transferToLicensePage: () =>
+    {
+        ipcRenderer.send('transfer-to-license')
+    },
+
+    transferToSettingsPage: () =>
+    {
+        ipcRenderer.send('transfer-to-settings')
+    }
+
 
 }
 

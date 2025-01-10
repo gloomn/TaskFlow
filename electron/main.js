@@ -76,6 +76,47 @@ const createWindow = () =>
         }
     });
 
+    ipcMain.on('transfer-to-dashboard', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/index.html'));
+    });
+
+    ipcMain.on('transfer-to-calendar', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/calendar.html'));
+    });
+
+    ipcMain.on('transfer-to-documents', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/documents.html'));
+    });
+
+    ipcMain.on('transfer-to-timetable', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/timetable.html'));
+    });
+
+    ipcMain.on('transfer-to-todolist', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/todolist.html'));
+    });
+
+    ipcMain.on('transfer-to-license', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/license.html'));
+    });
+
+    ipcMain.on('transfer-to-information', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/information.html'))
+    });
+
+    ipcMain.on('transfer-to-settings', () =>
+    {
+        window.loadFile(path.join(__dirname, '../src/html/settings.html'));
+    });
+
+
     //Show splash window when loading main window
     window.once('ready-to-show', () =>
     {

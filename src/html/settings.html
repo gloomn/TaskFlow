@@ -10,7 +10,6 @@
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
     <title>TaskFlow</title>
-</head>
 
 <body>
     <div class="MainApp">
@@ -27,11 +26,11 @@
         </div>
 
 
-        <div id="test" class ="ContentArea">
+        <div class ="ContentArea">
             <div class="SideContent">
                 <div class="ContentMenuList">
                     <p class="ButtonTitle">Task</p>
-                    <button id="dashboardButton" class="ActivatedMenuButton">
+                    <button id="dashboardButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/dashboardButton.svg">
                         <p>Dashboard</p>
                     </button>
@@ -66,10 +65,19 @@
                         <p>Settings</p> 
                     </button>
                 <div class="CopyrightLogo">
-                    © 2023 LeeKiJoon all rights reserved
+                    © 2025 LeeKiJoon all rights reserved
                 </div>
             </div>
             <div class="MainContent">
+                <h1>Settings</h1>
+                <div class="themeToggleButton">
+                    <h3>Theme</h3>
+                    <div class="btn btn-pill" id="themeButton">
+                        <input type="checkbox" class="checkbox" id="theme-toggle"/>
+                        <div class="knob"></div>
+                        <div class="btn-bg"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
