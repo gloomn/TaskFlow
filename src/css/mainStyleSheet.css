@@ -18,12 +18,13 @@
 
 :root 
 {
-    --background-color: #ffffff;
-    --button-color: #000000;
-    --button-selected-color: rgb(245,245,245);
-    --title-color: #424242;
-    --button-title-color: #555555;
-    --button-setting-color: #424242;
+    --background-color: #ffffff; /*배경 색깔*/
+    --button-color: #000000; /*버튼 p태그 색깔*/
+    --button-selected-color: rgb(245,245,245); /*버튼 선택 시 배경 색깔*/
+    --title-color: #424242; /*타이틀바 로고 색깔*/
+    --button-title-color: #555555; /*버튼 위의 조그만 타이틀 색깔*/
+    --button-setting-color: #424242; /*setting 버튼 p태그 색깔*/
+    --page-title-color: #000000; /*페이지 h1~h5 색깔*/
 }
 
 .dark-mode 
@@ -33,7 +34,8 @@
     --button-selected-color: #252b37;
     --title-color: #ffffff;
     --button-title-color: gray;
-    --button-setting-color: #7c7474;
+    --button-setting-color: #ffffff;
+    --page-title-color: #ffffff;
 }
 
 .dark-mode img 
@@ -193,6 +195,12 @@ body
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+.MainContent h1, h2,h3,h4,h5
+{
+    color: var(--page-title-color);
+    transition: color 0.2s linear;
 }
 
 .ContentMenuList 

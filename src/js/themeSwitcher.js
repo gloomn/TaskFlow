@@ -4,7 +4,7 @@ const themeToggle = document.getElementById('theme-toggle');
 
 // Update theme function
 function updateTheme(isDarkMode) {
-  document.body.classList.toggle('dark-mode', isDarkMode);
+  document.documentElement.classList.toggle('dark-mode', isDarkMode);
 
   // Save to local storage
   localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');

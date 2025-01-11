@@ -10,7 +10,15 @@
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
     <title>TaskFlow</title>
-
+    <script>
+        // 초기 테마를 즉시 적용하여 깜빡임 방지
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
 <body>
     <div class="MainApp">
 
