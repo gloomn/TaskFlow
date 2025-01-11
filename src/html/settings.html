@@ -9,6 +9,8 @@
     <script defer src="../js/titleBarControl.js"></script>
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
+    <script defer src="../js/languageSwitcher.js"></script>
+    <script defer src="../js/languageSwitcher.js"></script>
     <title>TaskFlow</title>
     <script>
         // 초기 테마를 즉시 적용하여 깜빡임 방지
@@ -37,54 +39,62 @@
         <div class ="ContentArea">
             <div class="SideContent">
                 <div class="ContentMenuList">
-                    <p class="ButtonTitle">Task</p>
+                    <p class="ButtonTitle" id="taskText">Task</p>
                     <button id="dashboardButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/dashboardButton.svg">
-                        <p>Dashboard</p>
+                        <p id="dashboardText">Dashboard</p>
                     </button>
                     <button id="calendarButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/calendarButton.svg">
-                        <p>Calendar</p>
+                        <p id="calendarText">Calendar</p>
                     </button>
                     <button id="timetableButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/timetableButton.svg">
-                        <p>Time Table</p> 
+                        <p id="timetableText">Time Table</p> 
                     </button>
                     <button id="documentsButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/documentsButton.svg">
-                        <p>Documents</p>
+                        <p id="documentsText">Documents</p>
                     </button>
                     <button id="todolistButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/todolistButton.svg">
-                        <p>TODO List</p>
+                        <p id="todolistText">TODO List</p>
                     </button>
-                    <p class="ButtonTitle">Others</p>
+                    <p class="ButtonTitle" id="othersText">Others</p>
                     <button id="informationButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/informationButton.svg">
-                        <p>Information</p> 
+                        <p id="informationText">Information</p> 
                     </button>
                     <button id="licenseButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/licenseButton.svg">
-                        <p>License</p> 
+                        <p id="licenseText">License</p> 
                     </button>
                 </div>
                     <button id="settingsButton" class="AdditionalMenuButton">
                         <img src="../../assets/buttons/sidebar/settingsButton.svg">
-                        <p>Settings</p> 
+                        <p id="settingsText">Settings</p> 
                     </button>
                 <div class="CopyrightLogo">
                     © 2025 LeeKiJoon all rights reserved
                 </div>
             </div>
             <div class="MainContent">
-                <h1>Settings</h1>
-                <div class="themeToggleButton">
-                    <h3>Theme</h3>
-                    <div class="btn btn-pill" id="themeButton">
-                        <input type="checkbox" class="checkbox" id="theme-toggle"/>
-                        <div class="knob"></div>
-                        <div class="btn-bg"></div>
+                <h1 id="settingsTitleText">Settings</h1>
+                <div class="SettingContainer">
+                    <h3 id="settingsThemeText">Theme</h3>
+                    <div class="cont">
+                        <div class="toggle">
+                            <input type="checkbox" id="mode-toggle" class="toggle__input">
+                            <label for="mode-toggle" class="toggle__label"></label>
+                        </div>
                     </div>
+                </div>
+                <div class="SettingContainer">
+                    <h3 id="settingsLanguageText">Language</h3>
+                    <select id="languageSelect" onClick="handleLanguageChange()">
+                        <option value="en" id="settingsLanguageEnglishText">English</option>
+                        <option value="ko" id="settingsLanguageKoreanText">한국어</option>
+                    </select>
                 </div>
             </div>
         </div>

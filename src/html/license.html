@@ -9,6 +9,7 @@
     <script defer src="../js/titleBarControl.js"></script>
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
+    <script defer src="../js/languageSwitcher.js"></script>
     <title>TaskFlow</title>
     <script>
         // 초기 테마를 즉시 적용하여 깜빡임 방지
@@ -39,46 +40,87 @@
         <div id="test" class ="ContentArea">
             <div class="SideContent">
                 <div class="ContentMenuList">
-                    <p class="ButtonTitle">Task</p>
+                    <p class="ButtonTitle" id="taskText">Task</p>
                     <button id="dashboardButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/dashboardButton.svg">
-                        <p>Dashboard</p>
+                        <p id="dashboardText">Dashboard</p>
                     </button>
                     <button id="calendarButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/calendarButton.svg">
-                        <p>Calendar</p>
+                        <p id="calendarText">Calendar</p>
                     </button>
                     <button id="timetableButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/timetableButton.svg">
-                        <p>Time Table</p> 
+                        <p id="timetableText">Time Table</p> 
                     </button>
                     <button id="documentsButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/documentsButton.svg">
-                        <p>Documents</p>
+                        <p id="documentsText">Documents</p>
                     </button>
                     <button id="todolistButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/todolistButton.svg">
-                        <p>TODO List</p>
+                        <p id="todolistText">TODO List</p>
                     </button>
-                    <p class="ButtonTitle">Others</p>
+                    <p class="ButtonTitle" id="othersText">Others</p>
                     <button id="informationButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/informationButton.svg">
-                        <p>Information</p> 
+                        <p id="informationText">Information</p> 
                     </button>
                     <button id="licenseButton" class="ActivatedMenuButton">
                         <img src="../../assets/buttons/sidebar/licenseButton.svg">
-                        <p>License</p> 
+                        <p id="licenseText">License</p> 
                     </button>
                 </div>
                     <button id="settingsButton" class="AdditionalMenuButton">
                         <img src="../../assets/buttons/sidebar/settingsButton.svg">
-                        <p>Settings</p> 
+                        <p id="settingsText">Settings</p> 
                     </button>
                 <div class="CopyrightLogo">
                     © 2025 LeeKiJoon all rights reserved
                 </div>
             </div>
             <div class="MainContent">
+                <h1 id="licenseTitleText">License</h1>
+                <textarea class="TextArea" id="licenseContentText" readonly disabled>
+Copyright (c) 2025 LeeKiJoon. All rights reserved.
+                    
+This software is available for use by anyone for both personal and commercial purposes. 
+However, modifying, redistributing, or creating derivative works based on this software is prohibited.
+                    
+1. Usage Rights:
+    - This software can be used by anyone for both personal and commercial purposes.
+    - Users may install and execute the software and use the distributed version as intended.
+                    
+2. Modification and Derivative Works Prohibited:
+    - Modifying the source code of this software or distributing modified versions is prohibited.
+    - Creating derivative works based on this software, including altering the source code to create a new version, is prohibited.
+                    
+3. Redistribution Restrictions:
+    - The original, unmodified version of the software may be redistributed, but modified versions or derivative works may not be distributed.
+    - The creation and distribution of derivative works is prohibited.
+                    
+4. Copyright:
+    - All copyright for this software remains with the developer, LeeKiJoon. 
+    - Users must respect the copyright of the software and adhere to the conditions set forth in this license.
+                    
+5. Disclaimer of Warranty:
+    - This software is provided "as is" without any warranties, express or implied.
+    - The developer is not responsible for any issues or damages arising from the use of the software.
+                    
+6. License Modification:
+    - The developer reserves the right to modify this license at any time.
+    - Any changes to the license will apply to new versions of the software.
+                    
+7. Legal Jurisdiction:
+    - The interpretation and application of this license are subject to the laws of (Country/Region).
+    - Any disputes will be resolved in the courts of the specified jurisdiction.
+                    
+By using this software, you agree to the terms and conditions of this license.
+
+[Program Font License]
+This program is using RecipeKoreaFont for logo.
+https://noonnu.cc/font_page/394
+                        </textarea>
             </div>
         </div>
     </div>

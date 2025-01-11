@@ -9,6 +9,7 @@
     <script defer src="../js/titleBarControl.js"></script>
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
+    <script defer src="../js/languageSwitcher.js"></script>
     <title>TaskFlow</title>
     <script>
         // 초기 테마를 즉시 적용하여 깜빡임 방지
@@ -42,43 +43,44 @@
                     <p class="ButtonTitle">Task</p>
                     <button id="dashboardButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/dashboardButton.svg">
-                        <p>Dashboard</p>
+                        <p id="dashboardText">Dashboard</p>
                     </button>
                     <button id="calendarButton" class="ActivatedMenuButton">
                         <img src="../../assets/buttons/sidebar/calendarButton.svg">
-                        <p>Calendar</p>
+                        <p id="calendarText">Calendar</p>
                     </button>
                     <button id="timetableButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/timetableButton.svg">
-                        <p>Time Table</p> 
+                        <p id="timetableText">Time Table</p> 
                     </button>
                     <button id="documentsButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/documentsButton.svg">
-                        <p>Documents</p>
+                        <p id="documentsText">Documents</p>
                     </button>
                     <button id="todolistButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/todolistButton.svg">
-                        <p>TODO List</p>
+                        <p id="todolistText">TODO List</p>
                     </button>
                     <p class="ButtonTitle">Others</p>
                     <button id="informationButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/informationButton.svg">
-                        <p>Information</p> 
+                        <p id="informationText">Information</p> 
                     </button>
                     <button id="licenseButton" class="DefaultMenuButton">
                         <img src="../../assets/buttons/sidebar/licenseButton.svg">
-                        <p>License</p> 
+                        <p id="licenseText">License</p> 
                     </button>
                 </div>
                     <button id="settingsButton" class="AdditionalMenuButton">
                         <img src="../../assets/buttons/sidebar/settingsButton.svg">
-                        <p>Settings</p> 
+                        <p id="settingsText">Settings</p> 
                     </button>
                 <div class="CopyrightLogo">
                     © 2025 LeeKiJoon all rights reserved
                 </div>
             </div>
             <div class="MainContent">
+                <h1 id="calendarTitleText">Calendar</h1>
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 //© 2025 LeeKiJoon all rights reserved
 // Toggle Switch element, theme status label element
-const themeToggle = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById('mode-toggle');
 
 // Update theme function
 function updateTheme(isDarkMode) {
