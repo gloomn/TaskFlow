@@ -9,8 +9,6 @@
     <script defer src="../js/titleBarControl.js"></script>
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
-    <script defer src="../js/languageSwitcher.js"></script>
-    <script defer src="../js/languageSwitcher.js"></script>
     <title>TaskFlow</title>
     <script>
         // 초기 테마를 즉시 적용하여 깜빡임 방지
@@ -91,7 +89,7 @@
                 </div>
                 <div class="SettingContainer">
                     <h3 id="settingsLanguageText">Language</h3>
-                    <select id="languageSelect" onClick="handleLanguageChange()">
+                    <select id="languageSelect" class="LanguageDropDown" onClick="handleLanguageChange()">
                         <option value="en" id="settingsLanguageEnglishText">English</option>
                         <option value="ko" id="settingsLanguageKoreanText">한국어</option>
                     </select>
