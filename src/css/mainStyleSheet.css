@@ -459,16 +459,6 @@ body
     transition: left 0.3s ease;
 }
 
-
-@media screen and (max-width: 576px) {
-	.SettingWrapper {
-		flex-direction: column;
-	}
-	.SettingIndicator {
-		border-right: none;
-	}
-}
-
 .InformationTitleContainer
 {
     display: flex;
@@ -512,61 +502,107 @@ body
     height: 100%;
 }
 
-.TimeTable
-{
-    display: grid;
-    grid-template-areas: ". week"
-                            "time content";
-    font-family: Karla;
-    grid-template-columns: 70px;
-    grid-template-rows: 50px;
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cd-schedule {
+    display: flex;
+    flex-direction: row; /* timeline과 events를 수평으로 배치 */
     width: 100%;
     height: 100%;
-}
-
-.TimeTable .WeekName {
-    grid-area: week;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    text-transform: uppercase;
-    font-size: 20px;
-    color: #546E7A;
-}
-
-.TimeTable .WeekName > div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    box-shadow: inset 1px 0 0 #ECEFF1;
-    
-}
-
-.TimeTable .Time {
-    grid-area: time;
-    display: grid;
-    grid-template-rows: repeat(15, 1fr);
-    font-size: 20px;
-    color: #546E7A;
   }
-
-.TimeTable .Time > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    box-shadow: inset 0 1px 0 0 #ECEFF1;
-}
-
-.TimeTable .TimeTableContent {
-    grid-area: content;
-    display: grid;
-    grid-template-rows: repeat(15, 1fr);
-    grid-template-columns: repeat(5, 1fr);
-}
   
-.TimeTable .TimeTableContent > div {
-    box-shadow: inset 1px 0 0 #ECEFF1, inset 0 1px 0 0 #ECEFF1;
-}
+  .cd-schedule .timeline {
+    display: flex;
+    flex-direction: column; /* 시간 항목을 세로로 배치 */
+    width: 80px; /* 시간 칸의 너비 */
+    border-right: 1px solid #EAEAEA;
+  }
+  
+  .timeline, .top-info {
+    font-family: Karla;
+    color: gray;
+  }
+  
+  .timeline .top-info {
+    text-align: center;
+    background-color: transparent;
+    padding: 10px 0;
+    border-bottom: 1px solid #EAEAEA;
+  }
+  
+  .cd-schedule .timeline ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 전체 높이를 100%로 설정하여 균등하게 나누게 함 */
+  }
+  
+  .cd-schedule .timeline li {
+    flex-grow: 1; /* 각 li 항목이 공간을 균등하게 차지하도록 설정 */
+    text-align: center;
+    border-bottom: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+  }
+  
+  .cd-schedule .events {
+    display: flex; /* `events`를 수평으로 배치 */
+    flex-grow: 1; /* 남은 공간을 `events`가 차지하도록 설정 */
+  }
+  
+  .cd-schedule .events .wrap {
+    display: flex; /* `wrap` 클래스를 수평으로 배치 */
+    flex-grow: 1;
+    justify-content: space-between; /* 각 `events-group` 요소들 사이에 공간을 균등하게 배치 */
+  }
+  
+  .cd-schedule .events .wrap ul {
+    background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
+    background-size: 100% 6.66%; /* 선 간격을 15개로 설정 */
+    background-repeat: repeat-y; /* 선을 반복하여 그리기 */
+    height: 100%;
+  }
+  
+  .cd-schedule .events .events-group {
+    display: flex;
+    flex-direction: column; /* 각 요일의 이벤트들을 세로로 배치 */
+    flex: 1; /* 각 요일이 균등하게 공간을 차지하도록 설정 */
+    border: none; /* border 제거 */
+  }
+  
+  .cd-schedule .events .events-group .top-info {
+    text-align: center;
+    background-color: transparent;
+    padding: 10px 0;
+  }
+  
+  .cd-schedule .events .events-group ul {
+    height: 100%;
+  }
+  
+  .cd-schedule .events .events-group li {
+    display: block;
+    padding: 10px;
+    background-color: #34C759;
+  }
+  
+  .cd-schedule .events .events-group li:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease box-shadow, 0.2s ease transform;
+  }
+  
+  .cd-schedule .events .single-event {
+    margin: 6px 0;
+  }
+  
+  .cd-schedule .events .event-name {
+    font-size: 14px;
+  }
+  
