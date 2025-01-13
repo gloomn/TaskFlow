@@ -31,6 +31,10 @@
     --toggle-light: #FD632F;
     --toggle-dark: #34C759;
     --timetable-day: gray;
+    --modal-background: #ffffff;
+    --modal-label-color: #424242;
+    --modal-placeholder-color: gray;
+    --modal-dropdown-color: black;
 }
 
 .dark-mode 
@@ -45,6 +49,10 @@
     --text-color: #ffffff;
     --textarea-scrollbar-color: #ffffff;
     --timetable-day: #ffffff;
+    --modal-background: #2b2b2b;
+    --modal--label-color: #ffffff;
+    --modal-placeholder-color: #b8b8b8;
+    --modal-dropdown-color: #b8b8b8;
 }
 
 .dark-mode .SideContent img
@@ -569,7 +577,7 @@ ul, li
 .cd-schedule .events .events-group ul 
 {
     background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px), linear-gradient(to right, #EAEAEA 1px, transparent 1px);
-    background-size: 100% 6.666666666666666666666666667%; /* 선 간격을 15개로 설정 */
+    background-size: 100% 6.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667%; /* 선 간격을 15개로 설정 */
     background-repeat: repeat-y; /* 수직 방향으로 선 반복 */
     height: 100%;
 }
@@ -599,15 +607,49 @@ ul, li
 {
     display: block;
     padding: 10px;
-    background-color: #34C759;
+    background-color: #6a7cee;
+    transition: .2s ease box-shadow, .2s ease transform;
 }
   
 .cd-schedule .events .events-group li:hover 
 {
     transform: scale(1.05);
     transition: 0.2s ease box-shadow, 0.2s ease transform;
+    box-shadow: 0 20px 30px 0 rgba(106, 124, 238, 0.1); /* 파란색에 70% 투명도 */
+    transform: scale(1.05);
 }
-  
+
+.single-event {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 부모 요소에 상대적 위치 지정 */
+}
+
+.event-button-box {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 0; /* 상단에 배치 */
+    right: 0; /* 오른쪽에 배치 */
+}
+
+.event-name {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.event-delete-button {
+    border: 0px;
+    margin: 3px;
+    padding: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 10px;
+    color: white;
+}
+
 .timetable-button
 {
     display: flex;
@@ -651,10 +693,10 @@ ul, li
 {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--modal-background);
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 400px;
     text-align: left;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative; /* 닫기 버튼을 위한 위치 지정 */
@@ -673,7 +715,7 @@ ul, li
     font-size: 20px;
     font-weight: bold;
     margin: 5px;
-    color: #424242;
+    color: var(--modal--label-color);
 }
 
 .modal-content input 
@@ -682,8 +724,16 @@ ul, li
     border: 0px;
     outline: 0px;
     font-size: 15px;
+    background-color: transparent;
+    color: var(--modal-placeholder-color);
     background-image: linear-gradient(to top, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
- }
+    border-radius: 5px;
+}
+
+.modal-content input::placeholder
+{
+    color: var(--modal-placeholder-color)
+}
 
 .modal-content select 
 {
@@ -691,15 +741,17 @@ ul, li
     padding: 5px;
     border: 0px;
     outline: 0px;
-    color: black;
+    color: var(--modal-dropdown-color);
     font-size: 15px;
+    background-color: transparent;
     background-image: linear-gradient(to top, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
 }
-  
-.modal-content select:focus
+
+.modal-content select option
 {
-    border-radius: 10px;
+    background-color: var(--modal-background);
 }
+  
   /* 닫기 버튼 */
 .close-btn {
     position: absolute;
@@ -708,6 +760,7 @@ ul, li
     font-size: 20px;
     cursor: pointer;
     margin: 5px;
+    color: var(--text-color);
 }
 
 .addclass-button

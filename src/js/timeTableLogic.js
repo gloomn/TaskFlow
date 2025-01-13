@@ -20,3 +20,11 @@ modal.addEventListener('click', (event) => {
       modal.style.visibility = 'hidden'; // 모달 숨기기
     }
   });
+
+  document.querySelectorAll('.event-delete-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // 버튼을 클릭한 부모 요소인 .single-event를 삭제
+        const eventItem = this.closest('.single-event'); // 클릭한 버튼의 가장 가까운 .single-event를 찾음
+        eventItem.remove(); // 해당 요소 제거
+    });
+});
