@@ -30,6 +30,7 @@
     --textarea-scrollbar-color: #555555;
     --toggle-light: #FD632F;
     --toggle-dark: #34C759;
+    --timetable-day: gray;
 }
 
 .dark-mode 
@@ -43,6 +44,7 @@
     --page-title-color: #ffffff;
     --text-color: #ffffff;
     --textarea-scrollbar-color: #ffffff;
+    --timetable-day: #ffffff;
 }
 
 .dark-mode .SideContent img
@@ -63,6 +65,7 @@ body
     height: 100%;
     background-color: var(--background-color);
     transition: background 0.2s linear;
+    box-sizing: border-box;
 }
 
 
@@ -520,19 +523,17 @@ ul, li {
     display: flex;
     flex-direction: column; /* 시간 항목을 세로로 배치 */
     width: 80px; /* 시간 칸의 너비 */
-    border-right: 1px solid #EAEAEA;
   }
   
   .timeline, .top-info {
     font-family: Karla;
-    color: gray;
+    color: var(--timetable-day); 
   }
   
   .timeline .top-info {
     text-align: center;
     background-color: transparent;
     padding: 10px 0;
-    border-bottom: 1px solid #EAEAEA;
   }
   
   .cd-schedule .timeline ul {
@@ -546,29 +547,24 @@ ul, li {
   .cd-schedule .timeline li {
     flex-grow: 1; /* 각 li 항목이 공간을 균등하게 차지하도록 설정 */
     text-align: center;
-    border-bottom: 1px solid #EAEAEA;
+    background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px); 
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: center; /* 수평 중앙 정렬 */
   }
-  
+
   .cd-schedule .events {
-    display: flex; /* `events`를 수평으로 배치 */
-    flex-grow: 1; /* 남은 공간을 `events`가 차지하도록 설정 */
-  }
-  
-  .cd-schedule .events .wrap {
     display: flex; /* `wrap` 클래스를 수평으로 배치 */
     flex-grow: 1;
     justify-content: space-between; /* 각 `events-group` 요소들 사이에 공간을 균등하게 배치 */
   }
   
-  .cd-schedule .events .wrap ul {
-    background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
-    background-size: 100% 6.66%; /* 선 간격을 15개로 설정 */
-    background-repeat: repeat-y; /* 선을 반복하여 그리기 */
+  .cd-schedule .events .events-group ul {
+    background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px), linear-gradient(to right, #EAEAEA 1px, transparent 1px);
+    background-size: 100% 6.667%; /* 선 간격을 15개로 설정 */
+    background-repeat: repeat-y; /* 수직 방향으로 선 반복 */
     height: 100%;
-  }
+}
   
   .cd-schedule .events .events-group {
     display: flex;
@@ -581,6 +577,7 @@ ul, li {
     text-align: center;
     background-color: transparent;
     padding: 10px 0;
+    background-image: linear-gradient(to right, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
   }
   
   .cd-schedule .events .events-group ul {
@@ -590,19 +587,11 @@ ul, li {
   .cd-schedule .events .events-group li {
     display: block;
     padding: 10px;
-    background-color: #34C759;
+    /*background-color: #34C759;*/
   }
   
   .cd-schedule .events .events-group li:hover {
     transform: scale(1.05);
     transition: 0.2s ease box-shadow, 0.2s ease transform;
-  }
-  
-  .cd-schedule .events .single-event {
-    margin: 6px 0;
-  }
-  
-  .cd-schedule .events .event-name {
-    font-size: 14px;
   }
   
