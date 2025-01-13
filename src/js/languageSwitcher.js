@@ -1,3 +1,5 @@
+//© 2025 LeeKiJoon all rights reserved
+'use strict';
 // 언어 데이터 로드 함수
 function loadLanguage(language) {
     fetch(`../../assets/languages/${language}.json`)  // 언어별 JSON 파일을 불러옴

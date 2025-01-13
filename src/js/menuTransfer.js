@@ -1,5 +1,5 @@
 //© 2025 LeeKiJoon all rights reserved
-
+'use strict';
 dashboardButton.addEventListener('click', () =>
 {
     window.api.transferToDashboardPage();

@@ -9,6 +9,7 @@
     <script defer src="../js/titleBarControl.js"></script>
     <script defer src="../js/menuTransfer.js"></script>
     <script defer src="../js/themeSwitcher.js"></script>
+    <script defer src="../js/timeTableLogic.js"></script>
     <script>
         // 초기 테마를 즉시 적용하여 깜빡임 방지
         (function () {
@@ -104,6 +105,63 @@
                         </div>
 
                         <div class="events">
+                            <div id="modal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close-btn" id="closeModal">&times;</span>
+                                    <h2>Add Class</h2>
+                                    <label for="inputText">Class Name</label>
+                                    <input type="text" id="inputText" placeholder="Class Name" />
+                                    <label for="inputText">Class Room</label>
+                                    <input type="text" id="inputText" placeholder="Class Room" />
+                                    <label for="inputText">Day</label>
+                                    <select id="languageSelect" class="LanguageDropDown" onClick="handleLanguageChange()">
+                                        <option value="monday">Monday</option>
+                                        <option value="tuesday">Tuesday</option>
+                                        <option value="wednesday">Wednesday</option>
+                                        <option value="thursday">Thursday</option>
+                                        <option value="friday">Friday</option>
+                                        <option value="saturday">Saturday</option>
+                                        <option value="sunday">Sunday</option>
+                                    </select>
+                                    <label for="inputText">Start Time</label>
+                                    <select id="languageSelect" class="LanguageDropDown" onClick="handleLanguageChange()">
+                                        <option value="monday">06:00</option>
+                                        <option value="tuesday">07:00</option>
+                                        <option value="wednesday">08:00</option>
+                                        <option value="thursday">09:00</option>
+                                        <option value="friday">10:00</option>
+                                        <option value="saturday">11:00</option>
+                                        <option value="sunday">12:00</option>
+                                        <option value="monday">13:00</option>
+                                        <option value="tuesday">14:00</option>
+                                        <option value="wednesday">15:00</option>
+                                        <option value="thursday">16:00</option>
+                                        <option value="friday">17:00</option>
+                                        <option value="saturday">18:00</option>
+                                        <option value="sunday">19:00</option>
+                                        <option value="sunday">20:00</option>
+                                    </select>
+                                    <label for="inputText">End Time</label>
+                                    <select id="languageSelect" class="LanguageDropDown" onClick="handleLanguageChange()">
+                                        <option value="monday">06:00</option>
+                                        <option value="tuesday">07:00</option>
+                                        <option value="wednesday">08:00</option>
+                                        <option value="thursday">09:00</option>
+                                        <option value="friday">10:00</option>
+                                        <option value="saturday">11:00</option>
+                                        <option value="sunday">12:00</option>
+                                        <option value="monday">13:00</option>
+                                        <option value="tuesday">14:00</option>
+                                        <option value="wednesday">15:00</option>
+                                        <option value="thursday">16:00</option>
+                                        <option value="friday">17:00</option>
+                                        <option value="saturday">18:00</option>
+                                        <option value="sunday">19:00</option>
+                                        <option value="sunday">20:00</option>
+                                    </select>
+                                    <button class="addclass-button">Add Class</button>
+                                </div>
+                              </div>
 
                                 <li class="events-group">
                                     <div class="top-info"><span>Monday</span></div>
@@ -218,6 +276,9 @@
                             </ul>
 
                     </div>
+                </div>
+                <div class="timetable-button">
+                    <button class="timetable-addbutton" id="addClassButton">Add Class</button>
                 </div>
             </div>
         </div>

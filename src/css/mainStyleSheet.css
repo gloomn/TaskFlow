@@ -506,92 +506,221 @@ body
 }
 
 
-ul, li {
+ul, li 
+{
     list-style: none;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .cd-schedule {
+.cd-schedule 
+{
     display: flex;
     flex-direction: row; /* timeline과 events를 수평으로 배치 */
     width: 100%;
     height: 100%;
-  }
+}
   
-  .cd-schedule .timeline {
+.cd-schedule .timeline 
+{
     display: flex;
     flex-direction: column; /* 시간 항목을 세로로 배치 */
     width: 80px; /* 시간 칸의 너비 */
-  }
+}
   
-  .timeline, .top-info {
+.timeline, .top-info {
     font-family: Karla;
     color: var(--timetable-day); 
-  }
+}
   
-  .timeline .top-info {
+.timeline .top-info 
+{
     text-align: center;
     background-color: transparent;
     padding: 10px 0;
-  }
+}
   
-  .cd-schedule .timeline ul {
+.cd-schedule .timeline ul 
+{
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     height: 100%; /* 전체 높이를 100%로 설정하여 균등하게 나누게 함 */
-  }
+}
   
-  .cd-schedule .timeline li {
+.cd-schedule .timeline li 
+{
     flex-grow: 1; /* 각 li 항목이 공간을 균등하게 차지하도록 설정 */
     text-align: center;
     background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px); 
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: center; /* 수평 중앙 정렬 */
-  }
+}
 
-  .cd-schedule .events {
+.cd-schedule .events 
+{
     display: flex; /* `wrap` 클래스를 수평으로 배치 */
     flex-grow: 1;
     justify-content: space-between; /* 각 `events-group` 요소들 사이에 공간을 균등하게 배치 */
-  }
+}
   
-  .cd-schedule .events .events-group ul {
+.cd-schedule .events .events-group ul 
+{
     background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px), linear-gradient(to right, #EAEAEA 1px, transparent 1px);
-    background-size: 100% 6.667%; /* 선 간격을 15개로 설정 */
+    background-size: 100% 6.666666666666666666666666667%; /* 선 간격을 15개로 설정 */
     background-repeat: repeat-y; /* 수직 방향으로 선 반복 */
     height: 100%;
 }
   
-  .cd-schedule .events .events-group {
+.cd-schedule .events .events-group 
+{
     display: flex;
     flex-direction: column; /* 각 요일의 이벤트들을 세로로 배치 */
     flex: 1; /* 각 요일이 균등하게 공간을 차지하도록 설정 */
     border: none; /* border 제거 */
-  }
+}
   
-  .cd-schedule .events .events-group .top-info {
+.cd-schedule .events .events-group .top-info 
+{
     text-align: center;
     background-color: transparent;
     padding: 10px 0;
     background-image: linear-gradient(to right, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
-  }
+}
   
-  .cd-schedule .events .events-group ul {
+.cd-schedule .events .events-group ul 
+{
     height: 100%;
-  }
+}
   
-  .cd-schedule .events .events-group li {
+.cd-schedule .events .events-group li 
+{
     display: block;
     padding: 10px;
-    /*background-color: #34C759;*/
-  }
+    background-color: #34C759;
+}
   
-  .cd-schedule .events .events-group li:hover {
+.cd-schedule .events .events-group li:hover 
+{
     transform: scale(1.05);
     transition: 0.2s ease box-shadow, 0.2s ease transform;
-  }
+}
+  
+.timetable-button
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timetable-addbutton
+{
+    margin: 5px;
+    padding: 10px;
+    text-align: left;
+    font-family: Manrope;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    background-color: #6a7cee;
+    transition: color 0.2s linear;
+    border: 0px;    
+    cursor: pointer;
+}
+
+/* 모달 창 기본 스타일 */
+.modal 
+{/* 기본적으로 숨김 */
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+  
+/* 모달 창 콘텐츠 */
+.modal-content 
+{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* 닫기 버튼을 위한 위치 지정 */
+}
+
+.modal-content h2
+{
+    font-family: Karla;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.modal-content label
+{
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+    color: #424242;
+}
+
+.modal-content input 
+{
+    padding: 5px;
+    border: 0px;
+    outline: 0px;
+    font-size: 15px;
+    background-image: linear-gradient(to top, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
+ }
+
+.modal-content select 
+{
+    border-radius: 5px;
+    padding: 5px;
+    border: 0px;
+    outline: 0px;
+    color: black;
+    font-size: 15px;
+    background-image: linear-gradient(to top, #EAEAEA 1px, transparent 1px); /* 선을 추가 */
+}
+  
+.modal-content select:focus
+{
+    border-radius: 10px;
+}
+  /* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.addclass-button
+{
+    margin: 10px 0px 10px 0px;
+    border: 0px;
+    padding: 10px;
+    font-family: karla;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #6a7cee;;
+}
   

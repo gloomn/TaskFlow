@@ -1,4 +1,5 @@
 //© 2025 LeeKiJoon all rights reserved
+'use strict';
 // Toggle Switch element, theme status label element
 const themeToggle = document.getElementById('mode-toggle');
 

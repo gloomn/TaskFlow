@@ -1,4 +1,5 @@
 //© 2025 LeeKiJoon all rights reserved
+'use strict';
 //Close window button event listener
 closeWindowButton.addEventListener('click', () =>
 {
