@@ -5,9 +5,10 @@ const
 { 
     app, 
     ipcMain,
-    BrowserWindow ,
-    dialog
+    BrowserWindow
 } = require('electron');
+const fileUtils = require('../src/js/utils/fileUtils.js');
+const dialogUtils = require('../src/js/utils/dialogUtils.js')
 const fs = require('fs/promises');
 const path = require('path');
 let window;
@@ -75,6 +76,15 @@ const createWindow = () =>
             window.close();
         }
     });
+
+    ipcMain.handle('save-to-json', (data) => {
+        fileUtils.saveToJSONFile(data);  // utils.js에서 함수 호출
+    });
+
+    ipcMain.handle('show-warning-dialog', async (_, title, message) =>
+    {
+        await dialogUtils.showWarningDialog(window, title, message);
+    })
 
     ipcMain.on('transfer-to-dashboard', () =>
     {

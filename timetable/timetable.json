@@ -1,0 +1,20 @@
+[
+  {
+    "_replyChannel": {},
+    "senderFrame": {},
+    "frameId": 1,
+    "processId": 5,
+    "frameTreeNodeId": 2,
+    "sender": {
+      "_windowOpenHandler": null,
+      "ipc": {
+        "_events": {},
+        "_eventsCount": 1,
+        "_invokeHandlers": {}
+      },
+      "navigationHistory": {},
+      "_events": {},
+      "_eventsCount": 19
+    }
+  }
+]

@@ -28,3 +28,42 @@ modal.addEventListener('click', (event) => {
         eventItem.remove(); // 해당 요소 제거
     });
 });
+
+document.getElementById("saveClassButton").addEventListener("click", function () {
+  const className = document.getElementById("className").value;
+  const classRoom = document.getElementById("classRoom").value;
+  const day = document.getElementById("day").value;
+  const startTime = document.getElementById("startTime").value;
+  const endTime = document.getElementById("endTime").value;
+
+  // 입력값 검증
+  if (!className || !classRoom || !startTime || !endTime) {
+    window.api.showWarningDialog('Warning [Add Class]', 'Please fill in the blank!');
+    return;
+  }
+
+  // 시간 검증: startTime이 endTime보다 같거나 커서는 안 됨
+  if (startTime >= endTime) {
+    window.api.showWarningDialog('Warning [Add Class]', 'Start time cannot be late than end time.');
+    return;
+  }
+
+  // classData 객체 생성
+  const classData = {
+    className: className,
+    classRoom: classRoom,
+    day: day,
+    startTime: startTime,
+    endTime: endTime,
+  };
+
+  console.log(classData);
+  
+  window.api.saveToJSONFile(classData)
+    .then(() => {
+      console.log("Data saved successfully!");
+    })
+    .catch(err => {
+      console.error("Error saving data:", err);
+    });
+});

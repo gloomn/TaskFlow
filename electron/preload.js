@@ -74,6 +74,16 @@ const WINDOW_API = {
     transferToSettingsPage: () =>
     {
         ipcRenderer.send('transfer-to-settings')
+    },
+
+    saveToJSONFile: (data) =>
+    {
+        ipcRenderer.invoke('save-to-json', data)
+    },
+
+    showWarningDialog : (title, message) =>
+    {
+        ipcRenderer.invoke('show-warning-dialog', title, message)
     }
 
 
