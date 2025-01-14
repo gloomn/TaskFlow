@@ -1,20 +1,37 @@
 [
   {
-    "_replyChannel": {},
-    "senderFrame": {},
-    "frameId": 1,
-    "processId": 5,
-    "frameTreeNodeId": 2,
-    "sender": {
-      "_windowOpenHandler": null,
-      "ipc": {
-        "_events": {},
-        "_eventsCount": 1,
-        "_invokeHandlers": {}
-      },
-      "navigationHistory": {},
-      "_events": {},
-      "_eventsCount": 19
-    }
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "monday",
+    "startTime": "06:00",
+    "endTime": "07:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "monday",
+    "startTime": "14:00",
+    "endTime": "15:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "monday",
+    "startTime": "18:00",
+    "endTime": "20:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "tuesday",
+    "startTime": "18:00",
+    "endTime": "20:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "tuesday",
+    "startTime": "14:00",
+    "endTime": "18:00"
   }
 ]

@@ -7,10 +7,11 @@ const
     ipcMain,
     BrowserWindow
 } = require('electron');
-const fileUtils = require('../src/js/utils/fileUtils.js');
+const jsonUtils = require('../src/js/utils/jsonUtils.js');
 const dialogUtils = require('../src/js/utils/dialogUtils.js')
 const fs = require('fs/promises');
 const path = require('path');
+const { json } = require('stream/consumers');
 let window;
 let splashWindow;
 
@@ -77,8 +78,9 @@ const createWindow = () =>
         }
     });
 
-    ipcMain.handle('save-to-json', (data) => {
-        fileUtils.saveToJSONFile(data);  // utils.js에서 함수 호출
+    ipcMain.handle('save-to-json', (event, data) => 
+    {
+        jsonUtils.saveToJSONFile(data);  // utils.js에서 함수 호출
     });
 
     ipcMain.handle('show-warning-dialog', async (_, title, message) =>
