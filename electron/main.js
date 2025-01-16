@@ -137,6 +137,7 @@ const createWindow = () =>
     });
 
     window.loadFile(path.join(__dirname, '../src/html/index.html'));
+    
 
 }
 

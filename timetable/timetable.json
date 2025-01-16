@@ -40,5 +40,26 @@
     "day": "thursday",
     "startTime": "07:00",
     "endTime": "11:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "tuesday",
+    "startTime": "06:00",
+    "endTime": "10:00"
+  },
+  {
+    "className": "asd",
+    "classRoom": "asd",
+    "day": "monday",
+    "startTime": "09:00",
+    "endTime": "10:00"
+  },
+  {
+    "className": "123",
+    "classRoom": "123",
+    "day": "friday",
+    "startTime": "13:00",
+    "endTime": "14:00"
   }
 ]

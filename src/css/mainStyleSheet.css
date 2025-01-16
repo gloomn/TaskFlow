@@ -571,7 +571,7 @@ ul, li
 .cd-schedule .events .events-group ul 
 {
     background-image: linear-gradient(to bottom, #EAEAEA 1px, transparent 1px), linear-gradient(to right, #EAEAEA 1px, transparent 1px);
-    background-size: 100% 6.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667%; /* 선 간격을 15개로 설정 */
+    background-size: 100% 6.666666666%; /* 선 간격을 15개로 설정 */
     background-repeat: repeat-y; /* 수직 방향으로 선 반복 */
     height: 100%;
 }
