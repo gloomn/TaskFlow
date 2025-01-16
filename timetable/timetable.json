@@ -33,5 +33,12 @@
     "day": "tuesday",
     "startTime": "14:00",
     "endTime": "18:00"
+  },
+  {
+    "className": "운영체제론",
+    "classRoom": "402호",
+    "day": "thursday",
+    "startTime": "07:00",
+    "endTime": "11:00"
   }
 ]
